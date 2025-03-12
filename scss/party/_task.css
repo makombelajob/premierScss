@@ -1,0 +1,1 @@
+body#task header h1{visibility:hidden}body#task #hero{display:grid;grid-template-columns:1fr 1fr;margin-inline:20px}body#task section:last-of-type p{text-align:center;font-size:1.5rem}body#task section:last-of-type form textarea{width:100%;box-sizing:border-box;border-radius:10px;margin-block:10px}body#task section:last-of-type form .btn{text-align:center}

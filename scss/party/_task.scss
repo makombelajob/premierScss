@@ -1,0 +1,46 @@
+body#task {
+    header {
+        h1 {
+            visibility: hidden;
+        }
+    }
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-inline: 20px;
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+    section:last-of-type {
+        p {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        form {
+            textarea {
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 10px;
+                margin-block: 10px;
+            }
+            .btn {
+                text-align: center;
+                .btn1 {
+                    @include btn-style;
+                    background-color: $color;
+                    
+                }
+            }
+        }
+        .btn2{
+            text-align: center;
+            .btn12 {
+            background-color: $text;
+            color: $white;
+            text-decoration: none;
+            @include btn-style;
+        }
+        }
+    }
+}
