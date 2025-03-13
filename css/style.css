@@ -66,14 +66,17 @@ body#task section:last-of-type .btn2 .btn12 {
 }
 
 main#home {
-  height: 28vh;
   background-color: rgba(128, 126, 126, 0.397);
 }
-main#home #hero div {
+main#home #hero #btnRest {
+  background-color: black;
+  cursor: pointer;
+}
+main#home div {
   display: flex;
   justify-content: space-between;
 }
-main#home #hero div a {
+main#home div a {
   text-decoration: none;
   background-color: rgb(167, 22, 102);
   border: none;

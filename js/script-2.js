@@ -15,3 +15,9 @@ for(const task of fromSession) {
 
     tache.appendChild(init);
 }
+
+const reset = document.querySelector("#btnReset");
+reset.addEventListener("click", function() {
+    localStorage.clear();
+    tache.textContent = "";
+});
