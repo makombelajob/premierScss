@@ -1,23 +1,28 @@
 const tache = document.querySelector("#listUl");
 
-const fromSession = JSON.parse(localStorage.getItem("task")) || [];
+const tasks = JSON.parse(localStorage.getItem("Daily")) ?? [];
+console.table(tasks);
 
-const template = document.querySelector("#template");
-
-for(const task of fromSession) {
+for (const task of tasks) {
+    const template = document.querySelector("#template");
     const init = template.content.cloneNode(true);
 
-    const ul = init.querySelector("ul");
-    ul.style.listStyle = "none";
-    const check = init.querySelector("#checkbox");
+    const li = init.querySelector("li");
     const label = init.querySelector("label");
-    label.textContent = task;
+    const checkbox = init.querySelector("input[type='checkbox']");
+    const edit = init.querySelector("#edit");
+    const reset = init.querySelector("#reset");
 
+    label.textContent = task.added;
+
+    reset.addEventListener("click", function () {
+        const taskText = label.textContent; 
+        li.remove(); 
+
+        const updatedTasks = tasks.filter(t => t.added !== taskText);
+
+        localStorage.setItem("Daily", JSON.stringify(updatedTasks));
+    });
     tache.appendChild(init);
-}
 
-const reset = document.querySelector("#btnReset");
-reset.addEventListener("click", function() {
-    localStorage.clear();
-    tache.textContent = "";
-});
+}

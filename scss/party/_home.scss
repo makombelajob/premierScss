@@ -6,28 +6,30 @@ main#home {
             cursor: pointer;
         }
     }
-        div {
+    div {
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+            background-color: $color;
+            border: none;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            color: $white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    ul#listUl {
+        border: 1px solid $text;
+        list-style: none;
+        padding: 2rem;
+        .li {
+            padding: 0.4rem;
             display: flex;
             justify-content: space-between;
-            a {
-                text-decoration: none;
-                background-color: $color;
-                border: none;
-                margin: 10px;
-                padding: 10px;
-                border-radius: 10px;
-                color: $white;
-                font-size: 30px;
-                cursor: pointer;
-            }
+            align-items: center;
         }
-        ul#listUl {
-            border: 1px solid $text;
-            list-style: none;
-            padding: 2rem;
-            li {
-                padding: 0.4rem;
-            }
-        }
-        
+    }
 }

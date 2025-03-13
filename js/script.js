@@ -1,23 +1,24 @@
-
-const fromSession = JSON.parse(localStorage.getItem("task")) || [];
-let taskList = fromSession ?? [];
-
-const form = document.querySelector("form");
-form.addEventListener("submit", function(e) {
+const stockLocal = JSON.parse(localStorage.getItem("Daily")) || [];
+let stockTable = stockLocal;
+const submit = document.querySelector("#submit");
+submit.addEventListener("click", function(e) {
     e.preventDefault();
-    const task = document.querySelector("#listtask");
-    if(task.value.length <= 5) {
-        alert("Une tâche de plus ou moins 5 caractès !");
+
+    const taskList = document.querySelector("#listtask");
+    const taskValue = taskList.innerHTML.trim();
+
+    if(taskValue.length < 5) {
+        alert("Veuillez entrez une tâche");
         return;
     }
-    const taskValue = task.value;
 
-    taskList.push(taskValue);
+    let stockObejt = {
+        added : taskValue
+    }
+    stockTable.push(stockObejt);
 
-    const taskJason = JSON.stringify(taskList);
-    localStorage.setItem("task", taskJason);
+    const stockJson = JSON.stringify(stockTable);
+    localStorage.setItem("Daily", stockJson);
 
-    window.location.href = "../index.html";
-});
-console.table(taskList)
-console.clear();
+    location.href = "../index.html";
+})
