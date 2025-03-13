@@ -14,6 +14,9 @@ header h1 {
   padding-inline: 3px;
 }
 
+body#task {
+  height: 100vh;
+}
 body#task header h1 {
   visibility: hidden;
 }
@@ -62,6 +65,10 @@ body#task section:last-of-type .btn2 .btn12 {
   margin-block: 20px;
 }
 
+main#home {
+  height: 28vh;
+  background-color: rgba(128, 126, 126, 0.397);
+}
 main#home #hero div {
   display: flex;
   justify-content: space-between;
